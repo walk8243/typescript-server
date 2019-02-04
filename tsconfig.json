@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2018",
+    "removeComments": true,
+    "outDir": "./dist",
+    "noUnusedLocals": true,
+    "newLine": "LF"
+  },
+  "include": [ "./src/**/*" ]
+}
