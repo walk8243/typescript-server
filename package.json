@@ -23,6 +23,7 @@
   "homepage": "https://github.com/walk8243/typescript-server#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "config": "^3.0.1",
     "express": "^4.16.4",
     "walk8243-logger": "^1.2.2"
   },

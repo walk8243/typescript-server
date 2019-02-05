@@ -1,10 +1,11 @@
 import * as http from 'http';
+import * as config from 'config';
 import { app } from './app';
 import { logger } from './lib/logger';
 
 const server = http.createServer(app);
 
-const port = Number(process.env.PORT) || 3000;
+const port = Number(process.env.PORT) || Number(config.port) || 3000;
 app.set('port', port);
 
 server.listen(port);

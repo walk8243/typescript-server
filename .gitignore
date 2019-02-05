@@ -84,3 +84,8 @@ typings/
 ### TypeScript ###
 # output file
 /dist/
+
+
+### config ###
+/config/**/*
+!/config/**/default.*
