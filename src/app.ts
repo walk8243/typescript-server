@@ -1,6 +1,7 @@
 import * as Express from 'express';
 import * as bodyParser from 'body-parser';
 import { router as indexRouter } from './route/index';
+import { logger } from './lib/logger';
 
 export const app = Express();
 
@@ -14,7 +15,7 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error(err);
+  logger.error(err);
 
   res.locals.message = err.message;
   res.locals.error = err;

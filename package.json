@@ -6,6 +6,7 @@
   "scripts": {
     "build": "yarn run tsc",
     "dev:run": "yarn build && yarn start",
+    "prod:run": "yarn build && NODE_ENV=production yarn start",
     "start": "node ./dist/server",
     "test": "yarn run mocha --require ts-node/register test/mocha.ts"
   },
@@ -22,7 +23,8 @@
   "homepage": "https://github.com/walk8243/typescript-server#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "walk8243-logger": "^1.2.2"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
