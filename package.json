@@ -5,10 +5,19 @@
   "main": "index.js",
   "scripts": {
     "build": "yarn run tsc",
-    "dev:run": "yarn build && yarn start",
-    "prod:run": "yarn build && NODE_ENV=production yarn start",
-    "start": "node ./dist/server",
-    "test": "yarn run nyc mocha test/* test/**/*"
+    "clean": "rm -rf ./dist/",
+    "clean-build": "yarn run clean && yarn run build",
+    "cover": "yarn run test && yarn run nyc report --reporter=html",
+    "dev:cover": "yarn run cover",
+    "dev:run": "yarn run build && yarn run start",
+    "dev:test": "yarn run test && yarn run nyc report --reporter=text",
+    "mocha": "yarn run nyc mocha test/* test/**/*",
+    "prod:cover": "NODE_ENV=production yarn run cover",
+    "prod:run": "yarn run clean-build && NODE_ENV=production yarn run start",
+    "prod:test": "NODE_ENV=production yarn run test && yarn run nyc report --reporter=text",
+    "server": "node ./dist/server",
+    "start": "yarn run server",
+    "test": "yarn run mocha"
   },
   "repository": {
     "type": "git",
@@ -48,8 +57,12 @@
     "exclude": [
       "**/*.d.ts"
     ],
+    "reporter": [
+      "none"
+    ],
     "require": [
       "ts-node/register"
-    ]
+    ],
+    "all": true
   }
 }
