@@ -2,7 +2,6 @@
   "name": "typescript-server",
   "version": "1.0.0",
   "description": "TypeScriptで作成したNode.jsサーバのテンプレート",
-  "main": "index.js",
   "scripts": {
     "build": "yarn run tsc",
     "clean": "rm -rf ./dist/",
@@ -23,7 +22,11 @@
     "type": "git",
     "url": "git+https://github.com/walk8243/typescript-server.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "typescript",
+    "express"
+  ],
   "author": "walk8243 (https://qiita.com/walk8243)",
   "license": "MIT",
   "bugs": {
